@@ -1,0 +1,75 @@
+{
+    "name": "app-eproc-dev",
+    "version": "1.0.0",
+    "description": "Consulta Andamento – Eproc: Realiza busca de andamentos em tribunais que utilizam o sistema Eproc",
+    "auth": {
+        "description": {
+            "title": "Configuração de Acesso",
+            "body": "Configure suas credenciais para acessar o serviço.",
+            "footer": "As credenciais são armazenadas com segurança.",
+            "link": ""
+        },
+        "params": [            {
+                "name": "whomToken",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "Token do Whom"
+            },
+            {
+                "name": "whomExtensionId",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "ID da Extensão do Whom"
+            }        
+        ]
+    },
+    "functions": {
+        "consultarProcesso": {
+            "script": "dist/consultarProcesso.js",
+            "description": "Consulta processo no Eproc",
+            "category": "judicial",
+            "values": {
+                "termo": "exemplo",
+                "filtro": "todos"
+            },
+            "params": [
+                {
+                    "name": "termo",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Termo de consulta"
+                },
+                {
+                    "name": "filtro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": false,
+                    "label": "Filtro de resultados"
+                }
+            ]        },
+        "listarProcessos": {
+            "script": "dist/listarProcessos.js",
+            "description": "Lista processos do advogado no Eproc",
+            "category": "judicial",
+            "values": {
+                "numeroProcesso": "0000000-00.0000.0.00.0000"
+            },
+            "params": [
+                {
+                    "name": "numeroProcesso",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Número do Processo"
+                }
+            ]        }    },
+    "config": {
+        "timeout": 60000,
+        "max_retries": 3,
+        "cache_ttl": 3600
+    },
+    "mcp": true
+}
