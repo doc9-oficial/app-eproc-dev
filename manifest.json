@@ -28,6 +28,7 @@
     },
     "functions": {
         "consultarProcesso": {
+            "name": "Consultar Processo - Eproc",
             "script": "dist/consultarProcesso.js",
             "description": "Consulta processo no Eproc",
             "category": "judicial",
@@ -58,6 +59,7 @@
             }
         },
         "listarProcessos": {
+            "name": "Listar Processos - Eproc",
             "script": "dist/listarProcessos.js",
             "description": "Lista processos do advogado no Eproc",
             "category": "judicial",
