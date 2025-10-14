@@ -9,7 +9,8 @@
             "footer": "As credenciais são armazenadas com segurança.",
             "link": ""
         },
-        "params": [            {
+        "params": [
+            {
                 "name": "whomToken",
                 "type": "string",
                 "inputType": "text",
@@ -22,7 +23,7 @@
                 "inputType": "text",
                 "required": true,
                 "label": "ID da Extensão do Whom"
-            }        
+            }
         ]
     },
     "functions": {
@@ -49,7 +50,13 @@
                     "required": false,
                     "label": "Filtro de resultados"
                 }
-            ]        },
+            ],
+            "help": {
+                "title": "Como usar a função consultarProcesso",
+                "body": "Para utilizar a função consultarProcesso, forneça o termo que deseja buscar no campo 'termo'. Você pode opcionalmente aplicar um 'filtro' para refinar os resultados. A função retornará uma lista de processos relacionados ao termo consultado.",
+                "footer": "Certifique-se de que o termo esteja correto para melhores resultados."
+            }
+        },
         "listarProcessos": {
             "script": "dist/listarProcessos.js",
             "description": "Lista processos do advogado no Eproc",
@@ -65,7 +72,14 @@
                     "required": true,
                     "label": "Número do Processo"
                 }
-            ]        }    },
+            ],
+            "help": {
+                "title": "Como usar a função listarProcessos",
+                "body": "Para utilizar a função listarProcessos, forneça o número do processo que deseja listar no campo 'numeroProcesso'. A função retornará uma lista de processos associados ao número fornecido.",
+                "footer": "Certifique-se de que o número do processo esteja correto para melhores resultados."
+            }
+        }
+    },
     "config": {
         "timeout": 60000,
         "max_retries": 3,
